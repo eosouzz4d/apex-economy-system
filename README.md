@@ -2,26 +2,22 @@
 
 Advanced procedural AI engine for NPC behavior in Roblox.
 
----
-
 ## Overview
 
-AIFrame is a high-level AI framework designed to simulate intelligent, adaptive NPCs through modular systems and layered decision-making.
+AIFrame is a high-level AI framework designed to simulate intelligent, adaptive NPCs using modular systems and layered decision-making.
 
-This is not a simple pathfinding script — it is a full behavioral engine.
-
----
+This is not a simple AI script. It is a full behavioral engine.
 
 ## Core Systems
 
 ### State Machine
 - 15+ dynamic states
 - Context-aware transitions
-- Override via goals and behavior trees
+- Goal overrides
 
 ### Perception System
 - Vision (raycast-based)
-- Hearing system
+- Hearing detection
 - Damage awareness
 - Alert levels
 
@@ -29,44 +25,37 @@ This is not a simple pathfinding script — it is a full behavioral engine.
 - Dynamic threat accumulation
 - Distance-based decay
 - Target prioritization
-- Threat sharing between NPCs
+- Threat sharing
 
 ### Memory System
 - Enemy tracking
 - Danger zones
 - Interest points
-- Custom facts API
+- Custom facts
 
 ### Pathfinding
 - Cached navigation
 - Anti-stuck recovery
 - Dynamic obstacle handling
 
----
-
 ## Tactical AI
 
-NPCs adapt using tactical modes:
-
+NPCs adapt using multiple strategies:
 - Rush
 - Flank
 - Circle
 - Kite
 - Cover
-- Hit & Run
+- Hit and Run
 - Retreat
-
----
 
 ## Combat System
 
-- Attack cycles with cooldowns
+- Attack cycles
 - Reactive blocking
 - Smart dodging
 - Critical hits
-- External combat engine support
-
----
+- External engine support
 
 ## Abilities
 
@@ -75,70 +64,47 @@ NPCs adapt using tactical modes:
 - Conditional activation
 - Custom callbacks
 
----
-
 ## Status Effects
 
-Supports advanced interactions:
-
-- Burning / Wet / Frozen synergy
-- Poison & Bleed stacking
-- Crowd control effects
-- Buffs and debuffs
-
----
+- Burning, Frozen, Poisoned and others
+- Stackable effects
+- Cross interactions
 
 ## Emotion System
-
-Dynamic behavior influenced by:
 
 - Fear
 - Rage
 - Stress
 - Morale
 
----
-
 ## Squad System
 
 - Dynamic formations
-- Command hierarchy
-- Tactical orders
-- Auto leader reassignment
-
----
+- Tactical commands
+- Leader reassignment
 
 ## Behavior Trees
 
 Supports:
-
-- Selector / Sequence
+- Selector and Sequence
 - Conditions
 - Cooldowns
-- Random weighted logic
-
----
+- Weighted randomness
 
 ## Performance
 
-- LOD system (Full / Medium / Low / Sleep)
+- LOD system
 - Bucket scheduler
-- Raycast budgeting
-
----
+- Raycast budget control
 
 ## Serialization
 
-- Full state export/import
+- Full state save and load
 - Replay system
-- Persistent AI state
-
----
 
 ## Architecture
 
-Built using modular OOP (metatables), with isolated subsystems:
-
+Modular system using metatables with isolated components:
 - perception
 - combat
 - movement
@@ -147,12 +113,20 @@ Built using modular OOP (metatables), with isolated subsystems:
 - emotion
 - prediction
 
----
+## Example
 
-## Usage
+    local AIFrame = require(path.to.module)
 
-```lua
-local AIFrame = require(path.to.module)
+    AIFrame:RegisterNPC(npcModel, config)
+    AIFrame:SetState(npcModel, "Chase")
 
-AIFrame:RegisterNPC(npcModel, config)
-AIFrame:SetState(npcModel, "Chase")
+## Philosophy
+
+- Server authoritative
+- Scalable by design
+- Modular and maintainable
+
+## Author
+
+Matheus Souza
+Roblox Systems Developer
